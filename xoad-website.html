@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="XOAD helps businesses move forward with AI-powered innovation, intelligent automation, and digital solutions." />
+  <title>XOAD — Intelligence Moves Forward</title>
+  <style>
+    :root {
+      --bg: #080a0f;
+      --panel: #10141d;
+      --text: #f4f6fb;
+      --muted: #a2aabc;
+      --line: rgba(255,255,255,.12);
+      --blue: #78a7ff;
+      --cyan: #75f0dc;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 10; backdrop-filter: blur(18px);
+      background: rgba(8,10,15,.78); border-bottom: 1px solid var(--line);
+    }
+    .nav { min-height: 78px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:850; letter-spacing:.18em; font-size:1.2rem; }
+    .mark { width:30px; height:30px; display:grid; grid-template-columns:1fr 1fr; gap:4px; transform:rotate(-8deg); }
+    .mark i { display:block; border:2px solid var(--blue); border-radius:5px; }
+    .mark i:nth-child(2) { border-radius:50%; border-color:var(--cyan); }
+    .mark i:nth-child(3) { border-color:var(--cyan); transform:rotate(45deg) scale(.78); }
+    .mark i:nth-child(4) { border-radius:2px; }
+    .links { display:flex; align-items:center; gap:30px; color:var(--muted); font-size:.92rem; }
+    .links a:hover { color:var(--text); }
+    .button { display:inline-flex; justify-content:center; align-items:center; padding:12px 18px; border-radius:999px; background:var(--text); color:#080a0f; font-weight:750; font-size:.92rem; transition:transform .2s, background .2s; }
+    .button:hover { transform:translateY(-2px); background:var(--cyan); }
+    .button.ghost { background:transparent; color:var(--text); border:1px solid var(--line); }
+    .button.ghost:hover { border-color:var(--cyan); background:rgba(117,240,220,.08); }
+    .hero { position:relative; overflow:hidden; padding:110px 0 96px; }
+    .hero:before { content:""; position:absolute; width:620px; height:620px; right:-100px; top:-80px; border-radius:50%; background:radial-gradient(circle, rgba(83,129,255,.20), rgba(83,129,255,0) 68%); pointer-events:none; }
+    .hero-grid { display:grid; grid-template-columns:1.12fr .88fr; align-items:center; gap:64px; position:relative; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; color:var(--cyan); text-transform:uppercase; letter-spacing:.16em; font-size:.75rem; font-weight:800; }
+    .eyebrow:before { content:""; width:24px; height:1px; background:var(--cyan); }
+    h1 { font-size:clamp(3.3rem, 7vw, 6.25rem); line-height:.98; letter-spacing:-.075em; margin:24px 0; max-width:780px; }
+    h1 span { color:var(--blue); }
+    .lead { max-width:580px; color:var(--muted); font-size:1.15rem; margin:0 0 30px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .micro { margin-top:26px; color:#7e899e; font-size:.83rem; }
+    .visual { min-height:410px; position:relative; display:grid; place-items:center; }
+    .orbit { position:absolute; border:1px solid rgba(120,167,255,.24); border-radius:50%; transform:rotate(-28deg); }
+    .orbit.one { width:350px; height:350px; }
+    .orbit.two { width:270px; height:420px; transform:rotate(38deg); border-color:rgba(117,240,220,.23); }
+    .core { width:190px; height:190px; border:1px solid rgba(255,255,255,.2); border-radius:42px; background:linear-gradient(145deg,#18243b,#0c111b); box-shadow:0 0 90px rgba(83,129,255,.17), inset 0 1px rgba(255,255,255,.12); display:grid; place-items:center; transform:rotate(-8deg); }
+    .core-word { font-size:2.5rem; letter-spacing:.13em; font-weight:900; transform:rotate(8deg); }
+    .node { position:absolute; width:52px; height:52px; border-radius:16px; background:#111a29; border:1px solid rgba(255,255,255,.18); display:grid; place-items:center; color:var(--cyan); font-size:1.25rem; box-shadow:0 12px 36px rgba(0,0,0,.3); }
+    .node.n1 { top:36px; left:19%; } .node.n2 { right:4%; top:40%; border-radius:50%; color:var(--blue); }
+    .node.n3 { bottom:28px; left:25%; transform:rotate(45deg); } .node.n4 { right:20%; bottom:48px; color:var(--blue); }
+    section { padding:90px 0; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:32px; margin-bottom:34px; }
+    .kicker { color:var(--cyan); font-size:.78rem; text-transform:uppercase; letter-spacing:.16em; font-weight:800; }
+    h2 { font-size:clamp(2.1rem,4vw,3.5rem); line-height:1.08; letter-spacing:-.055em; margin:12px 0 0; }
+    .section-intro { max-width:420px; color:var(--muted); margin:0; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .card { border:1px solid var(--line); border-radius:22px; padding:28px; background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012)); min-height:245px; }
+    .icon { width:46px; height:46px; display:grid; place-items:center; border:1px solid rgba(117,240,220,.3); color:var(--cyan); border-radius:14px; margin-bottom:25px; font-size:1.25rem; }
+    h3 { margin:0 0 10px; font-size:1.22rem; letter-spacing:-.025em; }
+    .card p { color:var(--muted); margin:0; font-size:.96rem; }
+    .about { background:#0c1018; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .about-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:80px; align-items:start; }
+    .statement { font-size:clamp(1.65rem,3vw,2.55rem); line-height:1.25; letter-spacing:-.045em; margin:0; }
+    .statement span { color:var(--blue); }
+    .about-copy { color:var(--muted); font-size:1.04rem; margin:0 0 18px; }
+    .values { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:35px; }
+    .value { border-top:1px solid var(--line); padding-top:15px; }
+    .value strong { display:block; margin-bottom:4px; }
+    .value span { color:var(--muted); font-size:.88rem; }
+    .cta { padding:78px 0; }
+    .cta-box { position:relative; overflow:hidden; border:1px solid rgba(120,167,255,.3); border-radius:28px; padding:54px; background:radial-gradient(circle at 100% 0%,rgba(83,129,255,.18),transparent 45%),#10141d; display:flex; align-items:center; justify-content:space-between; gap:35px; }
+    .cta-box h2 { max-width:660px; margin-top:10px; }
+    .cta-box p { color:var(--muted); margin-bottom:0; }
+    footer { border-top:1px solid var(--line); padding:28px 0; color:#7e899e; font-size:.85rem; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    .footer-brand { color:var(--text); font-weight:850; letter-spacing:.18em; }
+    @media (max-width:850px) {
+      .hero-grid,.about-grid { grid-template-columns:1fr; gap:35px; }
+      .hero { padding:76px 0 65px; }
+      .visual { min-height:350px; }
+      .section-head { display:block; }
+      .section-intro { margin-top:16px; }
+      .cards { grid-template-columns:1fr; }
+      .card { min-height:0; }
+      .cta-box { display:block; padding:35px; }
+      .cta-box .button { margin-top:24px; }
+    }
+    @media (max-width:600px) {
+      .wrap { width:min(var(--max),calc(100% - 32px)); }
+      .nav { min-height:68px; }
+      .links { gap:14px; }
+      .links a:not(.button) { display:none; }
+      .hero { padding-top:65px; }
+      h1 { font-size:3.6rem; }
+      .visual { min-height:300px; transform:scale(.86); margin:-15px 0; }
+      section { padding:66px 0; }
+      .values { grid-template-columns:1fr; }
+      .footer-inner { align-items:flex-start; flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="XOAD home">
+        <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>XOAD</span>
+      </a>
+      <nav class="links" aria-label="Main navigation">
+        <a href="#solutions">Solutions</a>
+        <a href="#about">About</a>
+        <a class="button" href="#contact">Let’s talk <span aria-hidden="true">&nbsp;↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Intelligence, in motion</div>
+          <h1>Make your next move <span>intelligent.</span></h1>
+          <p class="lead">XOAD helps businesses move forward with AI-powered innovation, intelligent automation, and digital solutions built around real-world needs.</p>
+          <div class="actions">
+            <a class="button" href="#contact">Build with XOAD <span aria-hidden="true">&nbsp;↗</span></a>
+            <a class="button ghost" href="#solutions">Explore what we do</a>
+          </div>
+          <div class="micro">Practical technology. Thoughtful innovation. Forward momentum.</div>
+        </div>
+        <div class="visual" aria-label="Abstract geometric XOAD brand illustration">
+          <div class="orbit one"></div><div class="orbit two"></div>
+          <div class="core"><div class="core-word">XOAD</div></div>
+          <div class="node n1">×</div><div class="node n2">○</div>
+          <div class="node n3">△</div><div class="node n4">□</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">What we do</div><h2>Technology with a<br>clear purpose.</h2></div>
+          <p class="section-intro">We turn emerging technology into useful, dependable solutions that help teams work smarter and businesses grow with confidence.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon" aria-hidden="true">✳</div>
+            <h3>AI-powered solutions</h3>
+            <p>Bring intelligence into everyday workflows with AI-enabled experiences designed to solve meaningful business problems.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">⌘</div>
+            <h3>Intelligent automation</h3>
+            <p>Reduce repetitive work, streamline processes, and give your team more room to focus on high-value ideas.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">↗</div>
+            <h3>Digital innovation</h3>
+            <p>Explore and build digital tools that connect ideas to action, with a focus on usability, adaptability, and impact.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div>
+          <div class="kicker">About XOAD</div>
+          <h2>We believe intelligence moves everything forward.</h2>
+        </div>
+        <div>
+          <p class="statement">The future isn't just something we wait for. <span>It's something we build.</span></p>
+          <p class="about-copy" style="margin-top:24px">XOAD is a technology-driven company focused on helping businesses grow, innovate, and work smarter. We bring together curiosity, creative thinking, and intelligent technology to turn complex challenges into opportunities.</p>
+          <p class="about-copy">Our approach starts with understanding the problem, choosing the right tools, and creating solutions that deliver practical value. As technology evolves, we keep moving forward—with purpose.</p>
+          <div class="values">
+            <div class="value"><strong>Think clearly</strong><span>Start with the real problem.</span></div>
+            <div class="value"><strong>Build intelligently</strong><span>Make technology useful.</span></div>
+            <div class="value"><strong>Move forward</strong><span>Keep learning and improving.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="wrap">
+        <div class="cta-box">
+          <div>
+            <div class="kicker">Your next move starts here</div>
+            <h2>Have a challenge worth solving?</h2>
+            <p>Let’s explore how intelligent technology can move your business forward.</p>
+          </div>
+          <!-- Replace hello@xoad.com with your real business email before publishing. -->
+          <a class="button" href="mailto:hello@xoad.com?subject=Let%E2%80%99s%20talk%20with%20XOAD">Start a conversation <span aria-hidden="true">&nbsp;↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-brand">XOAD</div>
+      <div>Intelligence Moves Forward.</div>
+      <div>© <span id="year"></span> XOAD. All rights reserved.</div>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
